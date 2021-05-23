@@ -20,6 +20,11 @@ export type ServiceResult<
   callData: CALL_DATA,
 }
 
+export type ServiceCallResult<DATA = undefined, CALL_DATA = undefined> = {
+  data: DATA,
+  callData: CALL_DATA,
+}
+
 export type ServiceError = {
   key: string,
   message: string,
