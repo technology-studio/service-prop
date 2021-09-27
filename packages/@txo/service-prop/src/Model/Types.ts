@@ -30,6 +30,7 @@ export type ServiceError = {
   message: string,
   data?: unknown,
   context?: string,
+  operationName?: string,
 }
 
 export type ValueOrValueMapper<VALUE> = VALUE | (() => VALUE)
