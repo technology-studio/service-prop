@@ -22,12 +22,12 @@ export class ExtendableException extends Error {
 
 export class ServiceErrorException extends ExtendableException {
   serviceErrorList: ServiceError[]
-  constructor (serviceErrorList: ServiceError[], message?: string) {
+  serviceName: string | undefined
+  constructor (serviceErrorList: ServiceError[], serviceName?: string) {
     super(serviceErrorList.map(({ message }) => message).join('\n'))
     this.serviceErrorList = serviceErrorList
-    this.name = message
-      ? `ServiceErrorException (${message})`
-      : 'ServiceErrorException'
+    this.serviceName = serviceName
+    this.name = 'ServiceErrorException'
   }
 }
 
