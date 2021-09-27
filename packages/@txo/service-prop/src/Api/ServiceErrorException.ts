@@ -26,7 +26,7 @@ export class ServiceErrorException extends ExtendableException {
     super(serviceErrorList.map(({ message }) => message).join('\n'))
     this.serviceErrorList = serviceErrorList
     this.name = message
-      ? `ServiceErrorException - ${message}`
+      ? `ServiceErrorException (${message})`
       : 'ServiceErrorException'
   }
 }
