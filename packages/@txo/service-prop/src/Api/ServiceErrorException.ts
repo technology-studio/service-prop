@@ -4,7 +4,6 @@
  * @Copyright: Technology Studio
 **/
 
-// TODO: migrate to typescript
 // import { ExtendableException } from '@txo/commons'
 
 import type { ServiceError } from '../Model/Types'
@@ -23,9 +22,11 @@ export class ExtendableException extends Error {
 
 export class ServiceErrorException extends ExtendableException {
   serviceErrorList: ServiceError[]
-  constructor (serviceErrorList: ServiceError[]) {
+  serviceName: string | undefined
+  constructor (serviceErrorList: ServiceError[], serviceName?: string) {
     super(serviceErrorList.map(({ message }) => message).join('\n'))
     this.serviceErrorList = serviceErrorList
+    this.serviceName = serviceName
     this.name = 'ServiceErrorException'
   }
 }
