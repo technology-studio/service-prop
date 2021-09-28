@@ -7,6 +7,9 @@
 // import { ExtendableException } from '@txo/commons'
 
 import type { ServiceError } from '../Model/Types'
+import {
+  DEFAULT_CONTEXT,
+} from '../Model'
 
 export class ExtendableException extends Error {
   constructor (message: string) {
@@ -20,13 +23,28 @@ export class ExtendableException extends Error {
   }
 }
 
+type ServiceErrorExceptionAttributes = {
+  context?: string,
+  serviceErrorList: ServiceError[],
+  serviceName: string,
+}
+
 export class ServiceErrorException extends ExtendableException {
+  context: string
   serviceErrorList: ServiceError[]
-  serviceName: string | undefined
-  constructor (serviceErrorList: ServiceError[], serviceName?: string) {
-    super(serviceErrorList.map(({ message }) => message).join('\n'))
+  serviceName: string
+  constructor ({
+    context,
+    serviceErrorList,
+    serviceName,
+  }: ServiceErrorExceptionAttributes) {
+    super(
+      `${serviceName}:${serviceErrorList.length > 1 ? '\n' : ' '}${serviceErrorList.map(({ message }) => message).join('\n')}`,
+    )
     this.serviceErrorList = serviceErrorList
     this.serviceName = serviceName
+    // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+    this.context = context || DEFAULT_CONTEXT
     this.name = 'ServiceErrorException'
   }
 }

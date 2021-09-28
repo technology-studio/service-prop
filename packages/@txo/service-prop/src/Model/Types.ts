@@ -31,8 +31,6 @@ export type ServiceError = {
   key: string,
   message: string,
   data?: unknown,
-  context?: string,
-  serviceName?: string,
 }
 
 export type ValueOrValueMapper<VALUE> = VALUE | (() => VALUE)
