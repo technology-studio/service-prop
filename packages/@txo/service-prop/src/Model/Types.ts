@@ -31,7 +31,6 @@ export type ServiceError = {
   key: string,
   message: string,
   data?: unknown,
-  context?: string,
   serviceName?: string,
 }
 
