@@ -20,13 +20,27 @@ export class ExtendableException extends Error {
   }
 }
 
+type ServiceErrorExceptionAttributes = {
+  serviceErrorList: ServiceError[],
+  serviceName: string,
+  context: string,
+}
+
+const DEFAULT_CONTEXT = 'default'
+
 export class ServiceErrorException extends ExtendableException {
   serviceErrorList: ServiceError[]
+  context: string
   serviceName: string | undefined
-  constructor (serviceErrorList: ServiceError[], serviceName?: string) {
+  constructor ({
+    serviceErrorList,
+    serviceName,
+    context,
+  }: ServiceErrorExceptionAttributes) {
     super(serviceErrorList.map(({ message }) => message).join('\n'))
     this.serviceErrorList = serviceErrorList
     this.serviceName = serviceName
+    this.context = context || DEFAULT_CONTEXT
     this.name = 'ServiceErrorException'
   }
 }
