@@ -9,10 +9,7 @@
 import type { ServiceError } from '../Model/Types'
 import {
   DEFAULT_CONTEXT,
-  DEFAULT_SERVICE_NAME,
 } from '../Model'
-
-import { materializeFromServiceErrorList } from './ErrorMessageHelper'
 
 export class ExtendableException extends Error {
   constructor (message: string) {
@@ -27,24 +24,25 @@ export class ExtendableException extends Error {
 }
 
 type ServiceErrorExceptionAttributes = {
-  serviceErrorList: ServiceError[],
-  serviceName?: string,
   context?: string,
+  serviceErrorList: ServiceError[],
+  serviceName: string,
 }
 
 export class ServiceErrorException extends ExtendableException {
-  serviceErrorList: ServiceError[]
   context: string
-  serviceName: string | undefined
+  serviceErrorList: ServiceError[]
+  serviceName: string
   constructor ({
+    context,
     serviceErrorList,
     serviceName,
-    context,
   }: ServiceErrorExceptionAttributes) {
-    super(materializeFromServiceErrorList(serviceErrorList))
+    super(
+      `${serviceName}:${serviceErrorList.length > 1 ? '\n' : ' '}${serviceErrorList.map(({ message }) => message).join('\n')}`,
+    )
     this.serviceErrorList = serviceErrorList
-    // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
-    this.serviceName = serviceName || DEFAULT_SERVICE_NAME
+    this.serviceName = serviceName
     // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
     this.context = context || DEFAULT_CONTEXT
     this.name = 'ServiceErrorException'

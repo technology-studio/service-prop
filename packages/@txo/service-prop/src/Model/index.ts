@@ -12,4 +12,3 @@ export enum ServiceErrorKey {
 }
 
 export const DEFAULT_CONTEXT = 'default'
-export const DEFAULT_SERVICE_NAME = 'default'
