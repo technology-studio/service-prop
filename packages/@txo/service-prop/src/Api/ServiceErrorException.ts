@@ -7,9 +7,6 @@
 // import { ExtendableException } from '@txo/commons'
 
 import type { ServiceError } from '../Model/Types'
-import {
-  DEFAULT_CONTEXT,
-} from '../Model'
 
 export class ExtendableException extends Error {
   constructor (message: string) {
@@ -24,7 +21,7 @@ export class ExtendableException extends Error {
 }
 
 type ServiceErrorExceptionAttributes = {
-  context?: string,
+  context: string,
   serviceErrorList: ServiceError[],
   serviceName: string,
 }
@@ -43,8 +40,7 @@ export class ServiceErrorException extends ExtendableException {
     )
     this.serviceErrorList = serviceErrorList
     this.serviceName = serviceName
-    // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
-    this.context = context || DEFAULT_CONTEXT
+    this.context = context
     this.name = 'ServiceErrorException'
   }
 }

@@ -10,5 +10,3 @@ export enum ServiceErrorKey {
   SERVER_ERROR = 'server-error',
   INTERNAL_SERVER_ERROR = 'INTERNAL_SERVER_ERROR'
 }
-
-export const DEFAULT_CONTEXT = 'default'
