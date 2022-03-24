@@ -8,5 +8,6 @@ export enum ServiceErrorKey {
   NETWORK_ERROR = 'network-error',
   CLIENT_ERROR = 'client-error',
   SERVER_ERROR = 'server-error',
-  INTERNAL_SERVER_ERROR = 'INTERNAL_SERVER_ERROR'
+  INTERNAL_SERVER_ERROR = 'INTERNAL_SERVER_ERROR',
+  NOT_AUTHORIZED = 'not-authorized',
 }
