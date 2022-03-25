@@ -16,13 +16,15 @@
     "test:watch": "concurrently \"yarn workspaces run build:watch\" \"jest --watch\"",
     "build": "yarn wpd build && yarn wd build",
     "coverage": "jest --coverage && open coverage/lcov-report/index.html || xdg-open coverage/lcov-report/index.html",
+    "compare-boilerplate-version": "./scripts/compare-boilerplate-version.sh",
     "lint": "eslint --format=node_modules/eslint-formatter-pretty --ext .jsx,.js,.ts,.tsx .",
     "fixcode": "eslint --format=node_modules/eslint-formatter-pretty --ext .jsx,.js,.ts,.tsx . --fix",
     "git-hook": "yarn -s lint-staged",
     "ncu-all": "yarn workspaces run ncu -i && ncu -i",
     "postinstall": "husky install",
     "print-txo-packages": "yarn list 2> /dev/null|grep @txo|sed 's/.*\\(@txo[^@]*\\)@^*\\([^ ]*\\).*/\\1@\\2/g'|sort|uniq",
-    "sanity": "yarn lint && yarn build && yarn tsc && yarn test && yarn outdated && echo 'success'",
+    "sanity": "yarn lint && yarn build && tsc --noEmit && yarn test && yarn compare-boilerplate-version && yarn outdated && echo 'success'",
+    "update-boilerplate-version": "./scripts/update-boilerplate-version.sh",
     "wd": "yarn workspace @txo/service-prop",
     "wpd": "yarn workspace @txo-peer-dep/service-prop"
   },
@@ -54,25 +56,5 @@
     "rimraf": "^3.0.2",
     "ts-jest": "^27.0.5",
     "typescript": "^4.4.4"
-  },
-  "jest": {
-    "preset": "ts-jest",
-    "testEnvironment": "node",
-    "testMatch": [
-      "<rootDir>/__tests__/**/?(*.)(spec|test).ts?(x)"
-    ],
-    "transformIgnorePatterns": [
-      "/node_modules/(?!@txo).+\\.js$"
-    ],
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "<rootDir>/__tests__/Config/",
-      "<rootDir>/__tests__/Setup.ts",
-      "<rootDir>/__tests__/Data.ts",
-      "<rootDir>/__tests__/Utils/"
-    ],
-    "setupFiles": [
-      "<rootDir>/__tests__/Setup.ts"
-    ]
   }
 }
