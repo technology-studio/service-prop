@@ -27,9 +27,10 @@ export type ServiceCallResult<DATA = undefined, CALL_DATA = undefined> = {
   callData: CALL_DATA,
 }
 
-export type ServiceError = {
+export type ServiceError<META = Record<string, unknown> | undefined> = {
   key: string,
   message: string,
+  meta?: META,
   data?: unknown,
 }
 
