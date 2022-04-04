@@ -8,6 +8,7 @@ import type { ServiceErrorException } from '..'
 
 export type CallAttributes<ATTRIBUTES> = Partial<ATTRIBUTES & {
   context?: string,
+  onFieldErrors?: (fieldErrors: Record<string, Record<string, string>>) => void,
 }>
 
 export type ServiceResult<
