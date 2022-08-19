@@ -49,20 +49,20 @@ export type ServicePropCall<
   ATTRIBUTES = undefined,
   DATA = undefined,
   CALL_ATTRIBUTES extends CallAttributes<ATTRIBUTES> | undefined = undefined,
-  EXTNEDED_RESULT = undefined
+  CALL_DATA = undefined
 > = (
   attributes: ATTRIBUTES,
   callAttributes?: CALL_ATTRIBUTES
-) => Promise<ServiceResult<ATTRIBUTES, DATA, CALL_ATTRIBUTES, EXTNEDED_RESULT>>
+) => Promise<ServiceCallResult<DATA, CALL_DATA>>
 
 export type ServiceProp<
   ATTRIBUTES = undefined,
   DATA = undefined,
   CALL_ATTRIBUTES extends CallAttributes<ATTRIBUTES> | undefined = undefined,
-  EXTNEDED_RESULT = undefined,
+  CALL_DATA = undefined,
 > = {
   data: DATA | null,
-  call: ServicePropCall<ATTRIBUTES, DATA, CALL_ATTRIBUTES, EXTNEDED_RESULT>,
+  call: ServicePropCall<ATTRIBUTES, DATA, CALL_ATTRIBUTES, CALL_DATA>,
   fetching: boolean,
   clear: (callContext?: string) => void,
   exception: ServiceErrorException | null,
