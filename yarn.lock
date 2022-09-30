@@ -2678,6 +2678,13 @@ eslint-config-standard@17.0.0:
   resolved "https://npm.technologystudio.sk/eslint-config-standard/-/eslint-config-standard-17.0.0.tgz#fd5b6cf1dcf6ba8d29f200c461de2e19069888cf"
   integrity sha512-/2ks1GKyqSOkH7JFvXJicu0iMpoojkwB+f5Du/1SC0PtBL+s8v30k9njRZ21pm2drKYm2342jFnGWzttxPmZVg==
 
+eslint-config-txo-typescript-react@^1.0.0:
+  version "1.0.0"
+  resolved "https://npm.technologystudio.sk/eslint-config-txo-typescript-react/-/eslint-config-txo-typescript-react-1.0.0.tgz#b2068401e339fc3ddd11f5b2f0e19c719c935a97"
+  integrity sha512-3ZjMsP2MKohODzNW2pVmSIjvSsDGjpJPdfLs6ynoFLCfqtVTHAtW1yozsLdbinup3eK0gw48momtx1/pT5bCxA==
+  dependencies:
+    eslint-config-txo-typescript "^3.1.24"
+
 eslint-config-txo-typescript@^3.1.24:
   version "3.1.24"
   resolved "https://npm.technologystudio.sk/eslint-config-txo-typescript/-/eslint-config-txo-typescript-3.1.24.tgz#80087d10a9142bc2617bd1238ddef615725edea5"
