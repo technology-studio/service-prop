@@ -15,7 +15,7 @@ export type ServiceResult<
   ATTRIBUTES,
   DATA,
   CALL_ATTRIBUTES extends CallAttributes<ATTRIBUTES> | undefined,
-  CALL_DATA
+  CALL_DATA,
 > = {
   serviceProp: ServiceProp<ATTRIBUTES, DATA, CALL_ATTRIBUTES, CALL_DATA>,
   attributes?: ATTRIBUTES,
@@ -49,7 +49,7 @@ export type ServicePropCall<
   ATTRIBUTES = undefined,
   DATA = undefined,
   CALL_ATTRIBUTES extends CallAttributes<ATTRIBUTES> | undefined = undefined,
-  CALL_DATA = undefined
+  CALL_DATA = undefined,
 > = (
   attributes: ATTRIBUTES,
   callAttributes?: CALL_ATTRIBUTES
