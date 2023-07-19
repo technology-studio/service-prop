@@ -45,7 +45,6 @@ export class ServiceErrorException extends ExtendableException {
   }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const isServiceErrorException = (error: any | ServiceErrorException): error is ServiceErrorException => (
+export const isServiceErrorException = (error: Error | ServiceErrorException): error is ServiceErrorException => (
   !!(error?.name === 'ServiceErrorException')
 )
