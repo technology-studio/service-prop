@@ -5,6 +5,7 @@
 **/
 
 // import { ExtendableException } from '@txo/commons'
+import { isObject } from '@txo/functional'
 
 import type { ServiceError } from '../Model/Types'
 
@@ -45,7 +46,6 @@ export class ServiceErrorException extends ExtendableException {
   }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const isServiceErrorException = (error: any | ServiceErrorException): error is ServiceErrorException => (
-  !!(error?.name === 'ServiceErrorException')
+export const isServiceErrorException = (error: unknown): error is ServiceErrorException => (
+  isObject(error) && error.name === 'ServiceErrorException'
 )
