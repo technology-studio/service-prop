@@ -5,6 +5,7 @@
 **/
 
 // import { ExtendableException } from '@txo/commons'
+import { isObject } from '@txo/functional'
 
 import type { ServiceError } from '../Model/Types'
 
@@ -45,6 +46,6 @@ export class ServiceErrorException extends ExtendableException {
   }
 }
 
-export const isServiceErrorException = (error: Error | ServiceErrorException): error is ServiceErrorException => (
-  !!(error?.name === 'ServiceErrorException')
+export const isServiceErrorException = (error: unknown): error is ServiceErrorException => (
+  isObject(error) && error.name === 'ServiceErrorException'
 )
