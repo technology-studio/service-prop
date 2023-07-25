@@ -1,6 +1,6 @@
 {
   "name": "@txo/service-prop",
-  "version": "2.2.10",
+  "version": "2.2.11",
   "description": "Technology Studio - Service prop",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
