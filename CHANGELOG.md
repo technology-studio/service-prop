@@ -1,3 +1,10 @@
+## [2.2.13](https://github.com/technology-studio/service-prop/compare/v2.2.12...v2.2.13) (2023-09-20)
+
+
+### Bug fixes
+
+* **deps:** update dependency @txo/functional to ^4.6.13 ([e14f5ed](https://github.com/technology-studio/service-prop/commit/e14f5ed2545a3d06b2b338a676ab99dc1bbaae7b))
+
 ## [2.2.12](https://github.com/technology-studio/service-prop/compare/v2.2.11...v2.2.12) (2023-08-10)
 
 
