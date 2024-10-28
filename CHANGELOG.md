@@ -1,3 +1,22 @@
+## [2.2.19](https://github.com/technology-studio/service-prop/compare/v2.2.18...v2.2.19) (2024-10-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* rename ServiceErrorException to ServiceOperationError (#587)
+
+### CI
+
+* add lint command for CI ([#557](https://github.com/technology-studio/service-prop/issues/557)) ([fe99a6b](https://github.com/technology-studio/service-prop/commit/fe99a6b6134b532ddcd0ef1ecfd92a74faa4cf38))
+* rename workflows ([#568](https://github.com/technology-studio/service-prop/issues/568)) ([24f3abc](https://github.com/technology-studio/service-prop/commit/24f3abcc52332dd4a12f2dfc5bc4dd1b6fb567fb))
+* update URL for code-quality ([#562](https://github.com/technology-studio/service-prop/issues/562)) ([4958729](https://github.com/technology-studio/service-prop/commit/4958729b1b00b61501bde7c85c1a3dc1348fec39))
+
+
+### Bug fixes
+
+* rename ServiceErrorException to ServiceOperationError ([#587](https://github.com/technology-studio/service-prop/issues/587)) ([329b597](https://github.com/technology-studio/service-prop/commit/329b59798e2e4f30e82b484fee42dc0504809644))
+* rename ServiceErrorException to ServiceOperationError ([#589](https://github.com/technology-studio/service-prop/issues/589)) ([3266a9b](https://github.com/technology-studio/service-prop/commit/3266a9b934f11f72bab0743a06396ba60732ed97))
+
 ## [2.2.18](https://github.com/technology-studio/service-prop/compare/v2.2.17...v2.2.18) (2024-04-10)
 
 
