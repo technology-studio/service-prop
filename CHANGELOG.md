@@ -1,3 +1,10 @@
+## [2.2.20](https://github.com/technology-studio/service-prop/compare/v2.2.19...v2.2.20) (2024-10-28)
+
+
+### Bug fixes
+
+* revert changes with `ServiceErrorException` ([#590](https://github.com/technology-studio/service-prop/issues/590)) ([2a23af4](https://github.com/technology-studio/service-prop/commit/2a23af47b2d4a892a9fc1e01329f2a95b620834f))
+
 ## [2.2.19](https://github.com/technology-studio/service-prop/compare/v2.2.18...v2.2.19) (2024-10-28)
 
 

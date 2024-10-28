@@ -4,7 +4,7 @@
  * @Copyright: Technology Studio
 **/
 
-import type { ServiceOperationError } from '..'
+import type { ServiceErrorException } from '..'
 
 export type CallAttributes<ATTRIBUTES> = Partial<ATTRIBUTES & {
   context?: string,
@@ -64,6 +64,8 @@ export type ServiceProp<
   data: DATA | null,
   call: ServicePropCall<ATTRIBUTES, DATA, CALL_ATTRIBUTES, CALL_DATA>,
   fetching: boolean,
-  exception: ServiceOperationError | null,
+  clear: (callContext?: string) => void,
+  exception: ServiceErrorException | null,
   options: Options,
+  clearException: (exception: ServiceErrorException) => void,
 }
