@@ -1,3 +1,14 @@
+## [3.0.0](https://github.com/technology-studio/service-prop/compare/v2.2.20...v3.0.0) (2024-10-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* rename ServiceErrorException to ServiceOperationError
+
+### Bug fixes
+
+* rename ServiceErrorException to ServiceOperationError ([#591](https://github.com/technology-studio/service-prop/issues/591)) ([e0848ee](https://github.com/technology-studio/service-prop/commit/e0848ee10c43c1de0ebe1d6dc0ba5be349602aa2))
+
 ## [2.2.20](https://github.com/technology-studio/service-prop/compare/v2.2.19...v2.2.20) (2024-10-28)
 
 
