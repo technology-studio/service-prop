@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/technology-studio/service-prop/compare/v3.0.0...v3.0.1) (2024-10-28)
+
+
+### Bug fixes
+
+* add `containsNonNetworkError` ([#592](https://github.com/technology-studio/service-prop/issues/592)) ([f437394](https://github.com/technology-studio/service-prop/commit/f43739412d233d03d5a0593d690df3a6d2d5a1a7))
+
 ## [3.0.0](https://github.com/technology-studio/service-prop/compare/v2.2.20...v3.0.0) (2024-10-28)
 
 
