@@ -4,6 +4,7 @@
  * @Copyright: Technology Studio
 **/
 
+export * from './Api/ServiceErrorHelper'
 export * from './Api/ServiceOperationError'
 export * from './Model/Types'
 export * from './Model'
