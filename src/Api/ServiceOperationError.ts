@@ -5,7 +5,7 @@
 **/
 
 // import { ExtendableException } from '@txo/commons'
-import { isObject } from '@txo/functional'
+import { isObject } from '@txo/types'
 
 import type { ServiceError } from '../Model/Types'
 
@@ -21,31 +21,31 @@ export class ExtendableException extends Error {
   }
 }
 
-type ServiceErrorExceptionAttributes = {
+type ServiceOperationErrorAttributes = {
   context: string,
   serviceErrorList: ServiceError[],
-  serviceName: string,
+  operationName: string,
 }
 
-export class ServiceErrorException extends ExtendableException {
+export class ServiceOperationError extends ExtendableException {
   context: string
   serviceErrorList: ServiceError[]
-  serviceName: string
+  operationName: string
   constructor ({
     context,
     serviceErrorList,
-    serviceName,
-  }: ServiceErrorExceptionAttributes) {
+    operationName,
+  }: ServiceOperationErrorAttributes) {
     super(
-      `${serviceName}:${serviceErrorList.length > 1 ? '\n' : ' '}${serviceErrorList.map(({ message }) => message).join('\n')}`,
+      `${operationName}:${serviceErrorList.length > 1 ? '\n' : ' '}${serviceErrorList.map(({ message }) => message).join('\n')}`,
     )
     this.serviceErrorList = serviceErrorList
-    this.serviceName = serviceName
+    this.operationName = operationName
     this.context = context
-    this.name = 'ServiceErrorException'
+    this.name = 'ServiceOperationError'
   }
 }
 
-export const isServiceErrorException = (error: unknown): error is ServiceErrorException => (
-  isObject(error) && error.name === 'ServiceErrorException'
+export const isServiceOperationError = (error: unknown): error is ServiceOperationError => (
+  isObject(error) && error.name === 'ServiceOperationError'
 )
