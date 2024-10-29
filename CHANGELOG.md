@@ -1,3 +1,10 @@
+## [3.0.2](https://github.com/technology-studio/service-prop/compare/v3.0.1...v3.0.2) (2024-10-29)
+
+
+### Bug fixes
+
+* rename `exception` to `error` ([#593](https://github.com/technology-studio/service-prop/issues/593)) ([36a31aa](https://github.com/technology-studio/service-prop/commit/36a31aa61400fb25578e96f1733288ec920884ae))
+
 ## [3.0.1](https://github.com/technology-studio/service-prop/compare/v3.0.0...v3.0.1) (2024-10-28)
 
 
