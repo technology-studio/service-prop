@@ -1,3 +1,10 @@
+## [3.0.3](https://github.com/technology-studio/service-prop/compare/v3.0.2...v3.0.3) (2024-10-31)
+
+
+### Bug fixes
+
+* rename fetching to isFetching ([#594](https://github.com/technology-studio/service-prop/issues/594)) ([a4b799b](https://github.com/technology-studio/service-prop/commit/a4b799ba23295da328dc03ba6dadd3b10cb39b3d))
+
 ## [3.0.2](https://github.com/technology-studio/service-prop/compare/v3.0.1...v3.0.2) (2024-10-29)
 
 
