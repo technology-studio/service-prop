@@ -63,7 +63,7 @@ export type ServiceProp<
 > = {
   data: DATA | null,
   call: ServicePropCall<ATTRIBUTES, DATA, CALL_ATTRIBUTES, CALL_DATA>,
-  fetching: boolean,
+  isFetching: boolean,
   error: ServiceOperationError | null,
   options: Options,
 }
