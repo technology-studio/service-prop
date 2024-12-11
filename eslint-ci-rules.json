@@ -1,0 +1,8 @@
+[
+  "@typescript-eslint/no-magic-numbers",
+  "@typescript-eslint/no-import-type-side-effects",
+  "@typescript-eslint/no-unsafe-type-assertion",
+  "@stylistic/space-before-function-paren",
+  "@typescript-eslint/prefer-destructuring",
+  "@typescript-eslint/consistent-type-exports"
+]
